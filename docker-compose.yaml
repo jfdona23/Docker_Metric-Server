@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+
+  mosquitto:
+    build:
+      context: ./mosquitto
+    ports:
+      - "1883:1883"
+
+  telegraf:
+    build:
+      context: ./telegraf
+    depends_on:
+      - mosquitto
+      - influxdb
+
+  influxdb:
+    build:
+      context: ./influxdb
+    volumes:
+      - ./influxdb/files/db/data/:/var/lib/influxdb/data/
+      - ./influxdb/files/db/meta/:/var/lib/influxdb/meta/
+    tmpfs: /var/lib/influxdb/wal:size=50M
+    ports:
+      - "127.0.0.1:25826:25826/udp"
+      - "127.0.0.1:8086:8086"
+
+  grafana:
+    build:
+      context: ./grafana
+    volumes:
+            - ./grafana/files/provisioning/:/etc/grafana/provisioning/
+    ports:
+      - "3000:3000"
+    depends_on:
+      - influxdb

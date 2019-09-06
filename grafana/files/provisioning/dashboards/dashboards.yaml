@@ -1,0 +1,18 @@
+apiVersion: 1
+#
+providers:
+  - name: 'Temperatura_Humedad'
+    orgId: 1
+    folder: 'Casa'
+    folderUid: ''
+    type: file
+    options:
+      path: /etc/grafana/provisioning/dashboards/temp_hum.json
+
+  - name: 'Raspberry Pi 4'
+    orgId: 1
+    folder: 'Casa'
+    folderUid: ''
+    type: file
+    options:
+      path: /etc/grafana/provisioning/dashboards/rpi_collectd.json
