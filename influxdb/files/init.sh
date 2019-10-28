@@ -26,7 +26,7 @@ fi
 
 # Not Used
 #influx -execute 'create database "rpi" with duration 7d name "rpi_RP"'
-#influx -execute "create user \"collectd\" with password 'collectd2611'"
+#influx -execute "create user \"collectd\" with password 'mypassword1234'"
 #influx -execute 'grant all on "rpi" to "collectd"'
 
 # Default
