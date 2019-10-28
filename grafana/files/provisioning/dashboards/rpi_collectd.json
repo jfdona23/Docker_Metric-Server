@@ -145,6 +145,7 @@
         "y": 3
       },
       "id": 6,
+      "interval": "1m",
       "legend": {
         "alignAsTable": false,
         "avg": false,
@@ -173,7 +174,14 @@
       "targets": [
         {
           "alias": "1 min",
-          "groupBy": [],
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            }
+          ],
           "measurement": "load_shortterm",
           "orderByTime": "ASC",
           "policy": "default",
@@ -186,6 +194,10 @@
                   "value"
                 ],
                 "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
               }
             ]
           ],
@@ -199,7 +211,14 @@
         },
         {
           "alias": "5 min",
-          "groupBy": [],
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            }
+          ],
           "measurement": "load_midterm",
           "orderByTime": "ASC",
           "policy": "default",
@@ -212,6 +231,10 @@
                   "value"
                 ],
                 "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
               }
             ]
           ],
@@ -225,7 +248,14 @@
         },
         {
           "alias": "15 min",
-          "groupBy": [],
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            }
+          ],
           "measurement": "load_longterm",
           "orderByTime": "ASC",
           "policy": "default",
@@ -238,6 +268,10 @@
                   "value"
                 ],
                 "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
               }
             ]
           ],
@@ -312,6 +346,7 @@
         "y": 3
       },
       "id": 4,
+      "interval": "1m",
       "legend": {
         "alignAsTable": false,
         "avg": false,
@@ -326,7 +361,7 @@
       "lines": true,
       "linewidth": 1,
       "links": [],
-      "nullPointMode": "connected",
+      "nullPointMode": "null",
       "options": {},
       "paceLength": 10,
       "percentage": false,
@@ -340,7 +375,14 @@
       "targets": [
         {
           "alias": "Used",
-          "groupBy": [],
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            }
+          ],
           "measurement": "memory_value",
           "orderByTime": "ASC",
           "policy": "default",
@@ -353,6 +395,10 @@
                   "value"
                 ],
                 "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
               }
             ]
           ],
@@ -372,7 +418,14 @@
         },
         {
           "alias": "Cached",
-          "groupBy": [],
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            }
+          ],
           "measurement": "memory_value",
           "orderByTime": "ASC",
           "policy": "default",
@@ -385,6 +438,10 @@
                   "value"
                 ],
                 "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
               }
             ]
           ],
@@ -404,7 +461,14 @@
         },
         {
           "alias": "Free",
-          "groupBy": [],
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            }
+          ],
           "measurement": "memory_value",
           "orderByTime": "ASC",
           "policy": "default",
@@ -417,6 +481,10 @@
                   "value"
                 ],
                 "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
               }
             ]
           ],
@@ -494,6 +562,7 @@
         "y": 12
       },
       "id": 9,
+      "interval": "",
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -704,7 +773,7 @@
         "y": 12
       },
       "id": 28,
-      "interval": "5m",
+      "interval": "1m",
       "legend": {
         "avg": false,
         "current": true,
@@ -733,7 +802,7 @@
           "groupBy": [
             {
               "params": [
-                "$interval"
+                "$__interval"
               ],
               "type": "time"
             }
@@ -830,6 +899,7 @@
         "y": 21
       },
       "id": 22,
+      "interval": "1m",
       "legend": {
         "avg": true,
         "current": false,
@@ -1036,7 +1106,7 @@
         "y": 21
       },
       "id": 26,
-      "interval": "7m",
+      "interval": "1m",
       "legend": {
         "avg": true,
         "current": false,
@@ -1266,5 +1336,5 @@
   "timezone": "",
   "title": "Raspberry Pi4",
   "uid": "HUox8Rriz",
-  "version": 3
+  "version": 1
 }
