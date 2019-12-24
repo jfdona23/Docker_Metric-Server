@@ -21,7 +21,8 @@ services:
     volumes:
       - ./influxdb/files/db/data/:/var/lib/influxdb/data/
       - ./influxdb/files/db/meta/:/var/lib/influxdb/meta/
-    tmpfs: /var/lib/influxdb/wal:size=50M
+      - ./influxdb/files/db/wal/:/var/lib/influxdb/wal/
+        #    tmpfs: /var/lib/influxdb/wal:size=50M
     ports:
       - "127.0.0.1:25826:25826/udp"
       - "127.0.0.1:8086:8086"
